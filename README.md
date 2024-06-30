@@ -1,0 +1,1 @@
+Template provided by https://github.com/rampatra/wedding-website?tab=readme-ov-file
