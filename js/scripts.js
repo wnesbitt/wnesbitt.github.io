@@ -373,35 +373,18 @@ $(document).ready(function () {
 }); 
         
 /********************** Extras **********************/
-
-// Google map
-function initMap() {
-    var location = {lat: 34.94208990472097, lng: -87.5706367386268};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: location,
-        scrollwheel: false
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('page-status-link').addEventListener('click', function(event) {
+        event.preventDefault();
+        var photo = document.getElementById('page-status-photo');
+        if (photo.style.display === 'none' || photo.style.display === '') {
+            photo.style.display = 'block';
+        } else {
+            photo.style.display = 'none';
+        }
     });
+});
 
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
-}
-
-function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: la_fiesta,
-        scrollwheel: false
-    });
-
-    var marker = new google.maps.Marker({
-        position: la_fiesta,
-        map: map
-    });
-}
 
 // alert_markup
 function alert_markup(alert_type, msg) {
