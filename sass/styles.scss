@@ -389,6 +389,25 @@ header {
   }
 }
 
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .hero {
+    background-position: 70% center; /* Moves image slightly more to the right */
+  }
+  .hero-content {
+    padding-top: 20%;
+  }
+  .hero-content img {
+    width: 75%;
+    margin-bottom: 20%;
+  }
+
+  .offset-logo {
+    margin-left: 0px; /* Adjust this value as needed for mobile devices */
+    transform: translateY(-230px); /* Move the logo up on mobile devices, adjust as needed */  
+  }
+}
+
 
 /* ==========================================================================
 Social share buttons
@@ -770,12 +789,21 @@ Google map
 #map-image-wrapper {
   height: 500px;
   width: 100%;
+  position: relative;
 }
+
+#map-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 #map-content-wrapper {
   position: relative;
-  margin-top: -502px;
+  margin-top: -500px; /* Make sure this matches the height of #map-image-wrapper */
   margin-bottom: 150px;
 }
+
 #map-content {
   margin-top: 40px;
   padding: 50px 60px;
@@ -783,6 +811,7 @@ Google map
   -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
   transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
 }
+
 #btn-show-content {
   padding: 20px;
   background: #fff;
@@ -791,16 +820,37 @@ Google map
   -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
   transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
 }
+
 .toggle-map-content {
   opacity: 0;
   visibility: hidden;
 }
+
 .pointer-events-none {
   pointer-events: none;
 }
+
 .pointer-events-auto {
   pointer-events: auto;
 }
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  #map-image-wrapper {
+    height: 500px; /* Adjust as needed for mobile */
+  }
+
+  #map-content-wrapper {
+    margin-top: -540px; /* Adjust as needed for mobile */
+  }
+
+  #map-content {
+    background: rgba(255, 255, 255, 0.9); /* Slightly more opaque on mobile for better readability */
+    padding: 10px;
+    width: 95%; /* Make the content width larger on mobile */
+  }
+}
+
 
 /* ==========================================================================
 RSVP form
@@ -1051,3 +1101,68 @@ body.modal-open {
 .modal-body {
   padding:25px;
 }
+
+/* Ensure the background color is dark and text color is light when the menu is opened on mobile */
+@media (max-width: 767px) {
+  .header-nav {
+    background-color: #333; /* Dark background for the menu */
+  }
+  .header-nav.open {
+    visibility: visible;
+    opacity: 0.9;
+    transition: opacity 0.5s;
+  }
+  .header-nav.open a {
+    color: #fff; /* Light color for the text */
+  }
+  .nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
+    background: #fff; /* Light color for the hamburger menu */
+  }
+}
+
+@media (max-width: 767px) {
+  .header-nav ul.primary-nav,
+  .header-nav ul.member-actions {
+    display: block;
+    text-align: center; /* Center the text */
+  }
+
+  .header-nav ul.primary-nav li,
+  .header-nav ul.member-actions li {
+    display: block;
+    width: 100%;
+    margin: 10px 0; /* Add margin to ensure spacing matches other links */
+  }
+
+  .header-nav ul.primary-nav li a,
+  .header-nav ul.member-actions li a {
+    display: block;
+    width: 100%;
+    padding: 15px 0; /* Adjust padding as needed */
+    font-size: 16px; /* Ensure the font size matches other links */
+    background-color: transparent; /* Make background transparent */
+    color: #fff; /* Ensure text color matches other links */
+    text-align: center; /* Center the text */
+  }
+
+  .header-nav ul.primary-nav li a:hover,
+  .header-nav ul.member-actions li a:hover {
+    background-color: #333; /* Change background color on hover */
+    color: #fff; /* Ensure text color on hover */
+  }
+
+  .header-nav .btn-white.btn-small {
+    background-color: #856a00; /* Ensure background color matches other links */
+    color: #fff; /* Ensure text color matches other links */
+    border: none; /* Remove border */
+    border-radius: 0; /* Remove border radius */
+    padding: 15px 0; /* Adjust padding as needed */
+    font-size: 16px; /* Ensure font size matches other links */
+  }
+
+  .header-nav .btn-white.btn-small:hover {
+    background-color: #333; /* Change background color on hover */
+    color: #fff; /* Ensure text color on hover */
+  }
+}
+
