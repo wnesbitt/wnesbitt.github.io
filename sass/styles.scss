@@ -259,11 +259,6 @@ Hero
   background-size: cover;
   position: relative;
 
-  /*.rsvp-btn {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-  }*/
   .down-arrow a {
     color: $txt-light;
   }
@@ -286,20 +281,23 @@ Hero
   }
 }
 .offset-logo {
-  margin-left: -500px; /* Adjust the value to set how far left you want the image */
+  margin-left: -500px; /* Adjust this value for larger screens */
 }
+
 .navigation {
   transition: all 300ms ease-in-out;
   position: fixed;
   width: 100%;
   z-index: 999;
 }
+
 .fixed {
   position: fixed;
   background-color: rgba(250, 216, 89, .88);
   z-index: 999;
   width: 100%;
 }
+
 header {
   padding: 50px 0;
   border-bottom: solid 1px rgba(255, 255, 255, 0.2);
@@ -317,12 +315,15 @@ header {
       margin-right: 20px;
     }
   }
+
   .logo {
     display: inline-block;
   }
+
   .logo img {
     height: 19px;
   }
+
   ul.primary-nav {
     margin: 0 0 0 75px;
     padding: 0;
@@ -338,11 +339,13 @@ header {
           color: #856a00;
         }
       }
+
       &:last-child a {
         padding-right: 0px;
       }
     }
   }
+
   ul.member-actions {
     li {
       display: inline;
@@ -356,9 +359,11 @@ header {
       }
     }
   }
+
   .header-nav {
     display: inline-block;
   }
+
   .member-actions {
     position: absolute;
     right: 0;
@@ -366,6 +371,7 @@ header {
     transition: all 300ms ease-in-out;
   }
 }
+
 .down-arrow {
   color: #fff;
   font-size: 30px;
@@ -375,39 +381,30 @@ header {
   transform: translateX(-50%);
 }
 
-/* Mobile Styles */
-@media (max-width: 767px) {
-  .hero {
-    background-position: center right;
-  }
-  .hero-content {
-    padding-top: 20%;
-  }
-  .hero-content img {
-    width: 75%;
-    margin-bottom: 20%;
-  }
-}
-
-/* Mobile Styles */
-@media (max-width: 767px) {
-  .hero {
-    background-position: 70% center; /* Moves image slightly more to the right */
-  }
-  .hero-content {
-    padding-top: 20%;
-  }
-  .hero-content img {
-    width: 75%;
-    margin-bottom: 20%;
-  }
-
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 768px) {
   .offset-logo {
-    margin-left: 0px; /* Adjust this value as needed for mobile devices */
-    transform: translateY(-230px); /* Move the logo up on mobile devices, adjust as needed */  
+    margin-left: -250px; /* Adjust for tablets */
   }
 }
 
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .hero {
+    background-position: 70% center;
+  }
+  .hero-content {
+    padding-top: 20%;
+  }
+  .hero-content img {
+    width: 75%;
+    margin-bottom: 20%;
+  }
+  .offset-logo {
+    margin-left: 0px;
+    transform: translateY(-230px); /* Adjust for mobile devices */
+  }
+}
 
 /* ==========================================================================
 Social share buttons
@@ -851,6 +848,18 @@ Google map
   }
 }
 
+/* ==========================================================================
+Registry
+========================================================================== */
+
+.registry-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+}
 
 /* ==========================================================================
 RSVP form
@@ -1096,14 +1105,14 @@ footer {
 Bootstrap override
 ========================================================================== */
 body.modal-open {
-  padding-right:0 !important;
+  padding-right: 0 !important;
 }
 .modal-body {
-  padding:25px;
+  padding: 25px;
 }
 
-/* Ensure the background color is dark and text color is light when the menu is opened on mobile */
-@media (max-width: 767px) {
+/* Ensure the background color is dark and text color is light when the menu is opened on mobile and tablets */
+@media (max-width: 1024px) {
   .header-nav {
     background-color: #333; /* Dark background for the menu */
   }
@@ -1120,7 +1129,7 @@ body.modal-open {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .header-nav ul.primary-nav,
   .header-nav ul.member-actions {
     display: block;
@@ -1165,4 +1174,3 @@ body.modal-open {
     color: #fff; /* Ensure text color on hover */
   }
 }
-
