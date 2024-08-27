@@ -838,7 +838,8 @@ Google map
   }
 
   #map-content-wrapper {
-    margin-top: -540px; /* Adjust as needed for mobile */
+    margin-top: -460px; /* Adjust as needed for mobile */
+    margin-bottom: 200px;
   }
 
   #map-content {
@@ -1023,6 +1024,18 @@ RSVP form
     &:hover {
       border-color: #007bff;
     }
+  }
+}
+
+@media (max-width: 767px) {
+  #rsvp {
+    padding-top: 150px; /* Adjust padding as needed */
+  }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  #rsvp {
+    padding-top: 100px; /* Adjust padding for landscape mode */
   }
 }
 
